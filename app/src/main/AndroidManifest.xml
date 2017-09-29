@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.msoft.mahmud.sqlitedatabase">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".TodoListActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.msoft.mahmud.sqlitedatabase.TodoActivity"
+            android:parentActivityName="com.msoft.mahmud.sqlitedatabase.TodoListActivity"/>
+        <activity
+            android:name="com.msoft.mahmud.sqlitedatabase.CategoryActivity"
+            android:parentActivityName="com.msoft.mahmud.sqlitedatabase.TodoListActivity"/>
+
+        <provider
+            android:name="com.msoft.mahmud.sqlitedatabase.data.TodosProvider"
+            android:authorities="com.msoft.mahmud.sqlitedatabase.todosprovider"
+            android:exported="false" />
+    </application>
+
+
+</manifest>

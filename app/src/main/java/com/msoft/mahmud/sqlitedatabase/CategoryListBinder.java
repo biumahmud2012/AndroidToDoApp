@@ -1,0 +1,23 @@
+package com.msoft.mahmud.sqlitedatabase;
+
+import android.databinding.BindingAdapter;
+import android.databinding.ObservableArrayList;
+import android.widget.ListView;
+
+import com.msoft.mahmud.sqlitedatabase.model.Category;
+
+public class CategoryListBinder {
+    @BindingAdapter("bind:items")
+    public static void bindList(ListView view,
+                                ObservableArrayList<Category> list) {
+        CategoryListAdapter adapter;
+        if (list == null) {
+            adapter = new CategoryListAdapter();
+        }
+        else {
+            adapter = new CategoryListAdapter(list);
+        }
+        view.setAdapter(adapter);
+    }
+}
+
